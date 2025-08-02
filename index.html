@@ -1,1 +1,325 @@
-// Main HTML file for Yummy Tummy application
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yummy Tummy - Transform your leftovers into delicious recipes and reduce food waste with our community-driven platform." />
+  <meta name="keywords" content="food waste, recipes, leftovers, sustainability, cooking, community" />
+  <meta name="author" content="Yummy Tummy Team" />
+
+  <!-- Performance optimizations -->
+  <meta name="theme-color" content="#007AFF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Yummy Tummy - Reduce Food Waste" />
+  <meta property="og:description" content="Transform your leftovers into delicious recipes and reduce food waste with our community-driven platform." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yummytummy.app" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>" />
+
+  <title>Yummy Tummy - Transform Leftovers, Reduce Waste</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="container">
+      <a href="#" class="logo">
+        <span class="logo-emoji">🥗</span>
+        <span>Yummy Tummy</span>
+      </a>
+      <nav role="navigation" aria-label="Main navigation">
+        <a href="#search-filter" class="nav-link" aria-label="Discover recipes">Discover</a>
+        <a href="#recipe-form" class="nav-link" aria-label="Share your recipe">Share Recipe</a>
+        <a href="#leftover-board" class="nav-link" aria-label="Exchange leftovers">Exchange</a>
+        <a href="#fridge-scan" class="nav-link" aria-label="Scan your fridge">Scan Fridge</a>
+        <a href="#tips" class="nav-link" aria-label="Sustainability tips">Tips</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <!-- Hero Section -->
+    <section id="hero" class="section" aria-labelledby="hero-heading">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 1rem; font-weight: 500;">
+          Transform your leftovers into delicious recipes and reduce food waste
+        </p>
+        <h1 id="hero-heading">Turn Leftovers into Masterpieces</h1>
+        <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+          Join our community of conscious cooks who transform food waste into delicious meals.
+          Share recipes, discover new flavors, and make a positive impact on the planet.
+        </p>
+      </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section id="search-filter" class="section">
+      <h2>🔍 Discover Recipes</h2>
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <label for="ingredientSearch" class="sr-only">Search ingredients</label>
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="text"
+            id="ingredientSearch"
+            class="search-input"
+            placeholder="What ingredients do you have?"
+            aria-label="Search for recipes by ingredients"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="filters-grid">
+          <select id="filterType" class="filter-select">
+            <option value="">All Cuisines</option>
+            <option value="Regional">Regional</option>
+            <option value="Classic">Classic</option>
+            <option value="Staple">Staple</option>
+            <option value="International">International</option>
+          </select>
+
+          <select id="filterState" class="filter-select">
+            <option value="">All Regions</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Punjab">Punjab</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+
+          <select id="filterCourse" class="filter-select">
+            <option value="">Any Course</option>
+            <option value="Starter">Starter</option>
+            <option value="Main Course">Main Course</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Snack">Snack</option>
+          </select>
+
+          <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recipe Form -->
+    <section id="recipe-form" class="section">
+      <h2>📝 Share Your Recipe</h2>
+      <form id="submitForm" class="form-container">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" id="title" placeholder="Recipe Title" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <textarea id="ingredients" placeholder="List your ingredients (e.g., leftover rice, vegetables, spices)" required></textarea>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <textarea id="steps" placeholder="Share your cooking steps..." required></textarea>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <select id="foodType">
+            <option value="">Select Cuisine Type</option>
+            <option value="Regional">Regional</option>
+            <option value="Classic">Classic</option>
+            <option value="Staple">Staple</option>
+            <option value="International">International</option>
+          </select>
+
+          <select id="foodState">
+            <option value="">Select Region</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Punjab">Punjab</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+
+          <select id="foodCourse">
+            <option value="">Select Course</option>
+            <option value="Starter">Starter</option>
+            <option value="Main Course">Main Course</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Snack">Snack</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="photoUpload" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Recipe Photo</label>
+            <input type="file" id="photoUpload" accept="image/*" />
+          </div>
+          <div class="form-group">
+            <label for="videoUpload" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Recipe Video (Optional)</label>
+            <input type="file" id="videoUpload" accept="video/*" />
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button type="submit" class="btn btn-primary btn-lg">Share Recipe</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Recipe List -->
+    <section id="recipes" class="section">
+      <h2>🍽️ Community Recipes</h2>
+      <div id="recipeGrid"></div>
+      <div id="noRecipes" style="text-align: center; padding: 3rem; color: var(--text-secondary); display: none;">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🍽️</div>
+        <h3>No recipes found</h3>
+        <p>Be the first to share a recipe with these ingredients!</p>
+      </div>
+    </section>
+
+    <!-- Leftover Exchange -->
+    <section id="leftover-board" class="section">
+      <h2>🍱 Leftover Exchange</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+        Share your excess food with the community and discover what others have available
+      </p>
+
+      <form id="leftoverForm" class="form-container">
+        <div class="form-row">
+          <input type="text" id="itemName" placeholder="What leftover do you have?" required />
+          <input type="text" id="location" placeholder="Your location" required />
+        </div>
+        <div class="form-row">
+          <textarea id="itemDetails" placeholder="Details (quantity, best before date, pickup instructions)"></textarea>
+        </div>
+        <div style="text-align: center;">
+          <button type="submit" class="btn btn-secondary">Post Item</button>
+        </div>
+      </form>
+
+      <div id="leftoverList"></div>
+    </section>
+
+    <!-- Scan Fridge Section -->
+    <section id="fridge-scan" class="section">
+      <h2>📷 Smart Fridge Scanner</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+        Upload a photo of your fridge and get personalized recipe suggestions
+      </p>
+
+      <div class="fridge-upload">
+        <div class="upload-area" onclick="document.getElementById('fridgeImage').click()">
+          <div class="upload-icon">📷</div>
+          <div class="upload-text">Click to upload fridge photo</div>
+          <input type="file" id="fridgeImage" accept="image/*" style="display: none;" />
+        </div>
+        <button onclick="scanFridge()" class="btn btn-primary btn-lg">Scan & Get Suggestions</button>
+      </div>
+
+      <div id="fridgeResults"></div>
+    </section>
+
+    <!-- Food Waste Tips -->
+    <section id="tips" class="section">
+      <h2>💡 Sustainability Tips</h2>
+      <div class="tips-grid" id="factsList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Yummy Tummy • Transforming leftovers, reducing waste, building community.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+        Made with 💚 for a sustainable future
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating Action Button -->
+  <button class="fab" onclick="document.getElementById('recipe-form').scrollIntoView({behavior: 'smooth'})" title="Share a Recipe">
+    ➕
+  </button>
+
+  <!-- Parallax Background -->
+  <div class="parallax-bg"></div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.9); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="text-align: center;">
+      <div class="spinner"></div>
+      <div style="margin-top: 1rem; color: var(--text-secondary);">Cooking up something delicious...</div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Add some interactive enhancements -->
+  <script>
+    // Add smooth reveal animations on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add gradient text effect to main heading
+      const mainHeading = document.querySelector('h1');
+      if (mainHeading) {
+        mainHeading.classList.add('gradient-text');
+      }
+
+      // Add pulse effect to CTA buttons
+      document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+          btn.classList.add('pulse');
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.classList.remove('pulse');
+        });
+      });
+
+      // Add image preview for file uploads
+      const photoUpload = document.getElementById('photoUpload');
+      if (photoUpload) {
+        photoUpload.addEventListener('change', function(e) {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              let preview = document.querySelector('.image-preview');
+              if (!preview) {
+                preview = document.createElement('img');
+                preview.className = 'image-preview';
+                photoUpload.parentNode.appendChild(preview);
+              }
+              preview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      }
+
+      // Add keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+        // Ctrl/Cmd + K to focus search
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+          e.preventDefault();
+          document.getElementById('ingredientSearch').focus();
+        }
+
+        // Escape to close modals
+        if (e.key === 'Escape') {
+          const modal = document.querySelector('.modal-overlay');
+          if (modal) {
+            modal.remove();
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
